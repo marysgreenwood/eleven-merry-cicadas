@@ -1,4 +1,6 @@
+
 [
+    {"comment": "this file should store and retrieve notes using the fs module"},
     {
         "title":"Test Title",
         "text":"Test text"
