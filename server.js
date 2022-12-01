@@ -1,6 +1,23 @@
+//load express
 const express= require("express");
+//load routes
+const apiRoutes= require('./apiRoutes');
+const htmlRoutes= require('./htmlRoutes');
 
-const PORT= 3001;
-
+//initialize app
 const app= express();
+//create port
+const PORT= process.env.PORT || 3001;
+
+//set up middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static('public'));
+app.use('/', htmlRoutes);
+app.use('/api', apiRoutes);
+
+//Start the server
+app.listen(PORT, () => console.log (`Listening on ${PORT}`));
+
+
 
