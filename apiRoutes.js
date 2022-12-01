@@ -1,5 +1,5 @@
 const router= require ('express').Router();
-const store = require ('../db/store');
+const store = require ('./db/store');
 
 //reads the db.json file and return all saved notes as JSON
 router.get ('/notes', (req, res) => {
