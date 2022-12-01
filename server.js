@@ -13,6 +13,8 @@ const PORT= process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
+
+//retrieve api and html routes
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
 

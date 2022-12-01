@@ -1,7 +1,7 @@
 const router= require ('express').Router();
 const store = require ('../db/store');
 
-//GET /api/notes should read the db.json file and return all saved notes as JSON
+//reads the db.json file and return all saved notes as JSON
 router.get ('/notes', (req, res) => {
     store
     .getNotes()
@@ -11,7 +11,7 @@ router.get ('/notes', (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-//POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. 
+//receives a new note to save on the request body, adds it to the db.json file, and then returns the new note to the client. 
 
 router.post('/notes', (req, res) => {
     store
@@ -20,8 +20,7 @@ router.post('/notes', (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-//DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete. In order to delete a note, you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the notes to the db.json file
-
+//receives a query parameter containing the id of a note, locates and deletes identified note
 router.delete ('/notes/:id', (req, res) => {
     store
     .removeNote(req.params.id)
@@ -29,4 +28,5 @@ router.delete ('/notes/:id', (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
+//exports routes for use in server.js
 module.exports=router;
