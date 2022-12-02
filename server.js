@@ -15,8 +15,9 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 //retrieve api and html routes
-app.use('/', htmlRoutes);
+
 app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 //Start the server
 app.listen(PORT, () => console.log (`Listening on ${PORT}`));

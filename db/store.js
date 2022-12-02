@@ -32,7 +32,6 @@ class Store {
     //takes in new note
     addNote(note){
         const {title, text}=note;
-        console.log(note);
         //send error message if no text is entered
         if (!title || !text) {
             throw new Error ("Note 'title' and 'text' cannot be blank")
