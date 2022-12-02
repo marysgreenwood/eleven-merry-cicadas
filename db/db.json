@@ -1,8 +1,1 @@
-
-[
-    {"comment": "this file should store and retrieve notes using the fs module"},
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+[{"title":"Test Title","text":"Test text"},{"title":"note","text":"note","id":"2892b670-71e0-11ed-80d3-4795cdbe07b7"}]

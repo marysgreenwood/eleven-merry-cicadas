@@ -1,7 +1,7 @@
 //require necessary modules/dependencies
 const util= require('util');
 const fs= require('fs');
-const uuid= require('uuid');
+const { v1: uuidv1 } = require('uuid')
 
 //instantiates functionality to read and write files and return a promise
 const readFileAsync= util.promisify(fs.readFile);
@@ -32,6 +32,7 @@ class Store {
     //takes in new note
     addNote(note){
         const {title, text}=note;
+        console.log(note);
         //send error message if no text is entered
         if (!title || !text) {
             throw new Error ("Note 'title' and 'text' cannot be blank")
